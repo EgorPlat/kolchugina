@@ -1,0 +1,17 @@
+.flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.wrapper {
+    display: grid;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 130vh;
+    background-color: grey;
+}
+h2 {
+   position: absolute;
+   margin-top: -50px;
+}

@@ -1,0 +1,173 @@
+@import '~antd/dist/antd.css';
+
+$rounded-radius: 4px;
+$matrix-stage-size: 600px;
+$spacing-md: 16px;
+$white: "#fff";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.padding-md {
+  padding: $spacing-md;
+}
+
+.white-bg {
+  background: $white;
+}
+
+.shadow {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-top-left {
+  border-top-left-radius: $rounded-radius;
+}
+
+.rounded-top-right {
+  border-top-right-radius: $rounded-radius;
+}
+
+.rounded-bottom-left {
+  border-bottom-left-radius: $rounded-radius;
+}
+
+.rounded-bottom-right {
+  border-bottom-right-radius: $rounded-radius;
+}
+
+.rounded-top {
+  @extend .rounded-top-left;
+  @extend .rounded-top-right;
+}
+
+.rounded-bottom {
+  @extend .rounded-bottom-left;
+  @extend .rounded-bottom-right;
+}
+
+.rounded-left {
+  @extend .rounded-top-left;
+  @extend .rounded-bottom-left;
+}
+
+.rounded-right {
+  @extend .rounded-top-right;
+  @extend .rounded-bottom-right;
+}
+
+.rounded {
+  @extend .rounded-top;
+  @extend .rounded-bottom;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  @extend .flex-container;
+  flex-direction: column;
+}
+
+.row-flex-center {
+  @extend .flex-container;
+  justify-content: center;
+}
+
+.col-flex-center {
+  @extend .flex-container;
+  align-items: center;
+}
+
+.flex-center {
+  @extend .row-flex-center;
+  @extend .col-flex-center;
+}
+
+.flex-center-column {
+  @extend .flex-center;
+  @extend .flex-column;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.grid-start {
+  @extend .grid-container;
+  justify-items: start;
+  align-items: start;
+}
+
+.grid-center {
+  @extend .grid-container;
+  justify-items: center;
+  align-items: center;
+}
+
+.app {
+  @extend .grid-container;
+  grid-template-rows: 1fr calc(#{$matrix-stage-size} + 50px) 1fr;
+}
+
+.main {
+  @extend .grid-center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.matrix-container {
+  @extend .grid-start;
+  @extend .rounded;
+  @extend .white-bg;
+  @extend .padding-md;
+  @extend .shadow;
+  height: $matrix-stage-size;
+  width: $matrix-stage-size;
+  overflow: auto;
+}
+
+.matrix {
+  @extend .flex-column;
+  flex-wrap: wrap;
+}
+
+.matrix-row {
+  @extend .flex-container;
+}
+
+.matrix-cell {
+  width: 60px;
+  height: 42px;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.konvajs-content {
+  @extend .rounded;
+  @extend .white-bg;
+  @extend .shadow;
+}
